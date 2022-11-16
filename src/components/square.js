@@ -32,7 +32,7 @@ export default class Square extends React.Component {
   function setImage(type, isPlayer1) {
     return (
       <img
-        src={require('../images/' + type + '.png')}
+        src={require('../../images/' + type + '.png')}
         alt={type}
         style={{transform: `rotate(${!isPlayer1 ? 180 : 0}deg)`}}
         >
