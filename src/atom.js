@@ -1,4 +1,5 @@
 import { atom } from "recoil"
+import setUpBoard from "./components/setupboard"
 
 export const squareState = (id) => atom({
     key: `square${id}`,
@@ -9,4 +10,14 @@ export const squareState = (id) => atom({
         isPlayer1: true,
         className: "item"
       }
+})
+
+export const squaresState = atom({
+  key: "squares",
+  default: setUpBoard()
+})
+
+export const selectedState = atom({
+  key: "selected",
+  default: null
 })

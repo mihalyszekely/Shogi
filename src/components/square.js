@@ -1,9 +1,10 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { squareState } from "../atom.js";
+import { squaresState, selectedState } from "../atom.js";
 export default function Square(props) {
 
-  //const [square, setSquare] = useRecoilState(squareState(props.squareID));
+  const [squares, setSquares] = useRecoilState(squaresState);
+  const [selected, setSelected] = useRecoilState(selectedState);
 /*
     const squareAtom = atom({
 
@@ -24,11 +25,23 @@ export default function Square(props) {
       return (
           <button 
             className={props.square.className}
-            onClick={props.onClick
-            /*
+            onClick={//props.onClick
+            
             () => {
-              setSquare(() => ({type: "t"}));
-            }*/
+              setSquares(() => {
+                const nextSquares = squares.map((s, i) => {
+                  if (i === props.squareID) {
+                    console.log(s);
+                    return {...s, type: "k"};
+                  } else {
+                    return s;
+                  }
+                })
+                console.log(nextSquares);
+                return nextSquares;
+              });
+              setSelected(() => {console.log(props.squareID);return props.squareID;})
+            }
             }
           >
             {
