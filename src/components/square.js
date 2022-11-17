@@ -1,8 +1,14 @@
 import React from "react";
-export default class Square extends React.Component {
-    constructor(props) {
-      super(props);
-    }
+import { useRecoilState } from "recoil";
+import { squareState } from "../atom.js";
+export default function Square(props) {
+
+  //const [square, setSquare] = useRecoilState(squareState(props.squareID));
+/*
+    const squareAtom = atom({
+
+    })
+    */
     /*
     shouldComponentUpdate(nextProps, nextState) {
       console.log(this.props.square.className);
@@ -14,19 +20,24 @@ export default class Square extends React.Component {
       return false;
     }
     */
-    render() {
+    //render() {
       return (
           <button 
-            className={this.props.square.className}
-            onClick={this.props.onClick}
+            className={props.square.className}
+            onClick={props.onClick
+            /*
+            () => {
+              setSquare(() => ({type: "t"}));
+            }*/
+            }
           >
             {
-              !this.props.square.isEmpty && setImage(this.props.square.type, this.props.square.isPlayer1)
+              !props.square.isEmpty && setImage(props.square.type, props.square.isPlayer1)
             }
-            
+            {/*console.log(square.type)*/}
           </button>
       );
-    }
+    //}
   }
 
   function setImage(type, isPlayer1) {

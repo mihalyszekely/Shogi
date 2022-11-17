@@ -19,10 +19,7 @@ export default class Shogi extends React.Component {
     }
   
     handleClick(i) {
-      // 
-      //console.log(this.state.squares[i].className);
       if (this.state.selectedPiece === null && this.state.squares[i].isPlayer1 === this.state.isPlayer1) {
-        //console.log(this.getPossibleMoves(i));
         this.setMoveOptions(i);
       } else this.movePiece(i);
       /*
@@ -167,7 +164,7 @@ export default class Shogi extends React.Component {
       //console.log(moves);
       return moves.filter((num) => num >= 0 && num <= 80);
     }
-  
+  /*
     resetSelection() {
       const localSquares = this.state.squares.slice();
       this.setState((prevState) => {
@@ -180,7 +177,7 @@ export default class Shogi extends React.Component {
         }
       })
     }
-  
+  */
     movePiece(j) {
       const localSquares = this.state.squares.slice();
       if (this.state.squares[j].className === "itemSelected") {
