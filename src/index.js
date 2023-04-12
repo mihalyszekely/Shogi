@@ -18,3 +18,4 @@ root.render(
     <Shogi />
   </RecoilRoot>
 );
+// hali
